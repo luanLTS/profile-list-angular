@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row m-3">
+        <button class="btn btn-outline-dark col-md-3 col-sm-6 col-12" type="button" (click)="showForm()">
+            {{ !visibleForm ? "Open" : "Close" }} Form
+        </button>
+    </div>
+    <div class="row m-3" *ngIf="visibleForm">
+        <form class="form-group">
+            <div class="row">
+                <div class="col-md-6 col-12 col-sm-8">
+                    <label for="name" class="lebel-control p-1 mb-1">Name</label>
+                    <input type="text" class="form-control" id="name" />
+                </div>
+                <div class="col-md-6 col-12 col-sm-4">
+                    <label for="age" class="lebel-control p-1 mb-1">Age</label>
+                    <input type="text" class="form-control" id="age" />
+                </div>
+                <div class="col-12">
+                    <label for="url" class="lebel-control p-1 mb-1">Image URL</label>
+                    <input type="text" class="form-control" id="url" />
+                </div>
+                <div class="d-grid mt-4 gap-2">
+                    <button class="btn btn-outline-success" type="button">Add</button>
+                    <button class="btn btn-outline-warning" type="reset">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div *ngFor="let profile of profiles" class="col-md-4 col-sm-6 col-12">
+            <app-banner-profile [name]="profile.name" [age]="profile.age" [urlImg]="profile.urlImg">
+            </app-banner-profile>
+        </div>
+    </div>
+</div>
