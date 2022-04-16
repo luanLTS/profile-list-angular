@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@600&display=swap');
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 
 :root {
     --title: "Inter";
