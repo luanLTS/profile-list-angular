@@ -74,6 +74,15 @@ export class ProfileListComponent implements OnInit, OnChanges {
   removeProfile(event: string) {
     this.profiles = this.profiles.filter((prof) => prof.id !== parseInt(event));
   }
+
+  dataUpdateProfile(event: Object) {
+    console.log(event);
+    this.profile.id = event['id'];
+    this.profile.name = event['name'];
+    this.profile.age = event['age'];
+    this.profile.urlImg = event['urlImg'];
+  }
+
   generateID() {
     return ++this.idInit;
   }

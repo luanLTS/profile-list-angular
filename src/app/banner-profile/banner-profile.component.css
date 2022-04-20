@@ -5,7 +5,7 @@
 
 .banner .banner-functions {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 5px 10px;
     cursor: pointer;
 }

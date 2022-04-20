@@ -29,10 +29,10 @@
     </div>
     <div class="row">
         <div *ngFor="let profile of profiles" class="col-md-4 col-sm-6 col-12">
-            <!-- {{ profile.id }} -->
             <app-banner-profile [name]="profile.name" [age]="profile.age" [urlImg]="profile.urlImg" [id]="profile.id"
-                (deleteProfileEvent)="removeProfile($event)">
+                (deleteProfileEvent)="removeProfile($event)" (updateProfileEvent)="dataUpdateProfile($event)">
             </app-banner-profile>
         </div>
     </div>
+
 </div>
