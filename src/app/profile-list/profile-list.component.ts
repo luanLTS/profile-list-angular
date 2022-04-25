@@ -69,7 +69,7 @@ export class ProfileListComponent implements OnInit, OnChanges {
       age: '',
       urlImg: '',
     };
-    console.log(this.profiles);
+    this.visibleForm = false;
   }
   removeProfile(event: string) {
     this.profiles = this.profiles.filter((prof) => prof.id !== parseInt(event));
