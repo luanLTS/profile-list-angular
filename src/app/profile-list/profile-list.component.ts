@@ -44,7 +44,7 @@ export class ProfileListComponent implements OnInit, OnChanges {
   ngOnChanges(): void {}
 
   visibleForm: boolean = false;
-
+  visibleModal: boolean = false;
   profile = {
     id: 0,
     name: '',
@@ -75,12 +75,23 @@ export class ProfileListComponent implements OnInit, OnChanges {
     this.profiles = this.profiles.filter((prof) => prof.id !== parseInt(event));
   }
 
-  dataUpdateProfile(event: Object) {
-    console.log(event);
-    this.profile.id = event['id'];
-    this.profile.name = event['name'];
-    this.profile.age = event['age'];
-    this.profile.urlImg = event['urlImg'];
+  dataUpdateProfile(event) {
+    this.visibleModal = true;
+    this.profile['id'] = event.id;
+    this.profile['name'] = event.name;
+    this.profile['age'] = event.age;
+    this.profile['urlImg'] = event.urlImg;
+  }
+
+  updateProfile() {
+    this.profiles.forEach((profile) => {
+      if (profile.id === this.profile.id) {
+        profile.name = this.profile.name;
+        profile.age = this.profile.age;
+        profile.urlImg = this.profile.urlImg;
+      }
+    });
+    this.visibleModal = false;
   }
 
   generateID() {

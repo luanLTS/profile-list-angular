@@ -1,4 +1,25 @@
 <div class="container">
+    <div class="modal-update d-flex" *ngIf="visibleModal">
+        <div class="row bg-dark p-5">
+            <div class="col-md-6 col-12 col-sm-8">
+                <label for="name" class="lebel-control p-1 mb-1 text-white">Name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="profile.name" />
+            </div>
+            <div class="col-md-6 col-12 col-sm-4">
+                <label for="age" class="lebel-control p-1 mb-1 text-white">Age</label>
+                <input type="text" class="form-control" id="age" [(ngModel)]="profile.age" />
+            </div>
+            <div class="col-12">
+                <label for="url" class="lebel-control p-1 mb-1 text-white">Image URL</label>
+                <input type="text" class="form-control" id="url" [(ngModel)]="profile.urlImg" />
+            </div>
+            <div class="d-grid mt-4 gap-2">
+                <button class="btn btn-outline-success" type="button" (click)="updateProfile()">Update</button>
+                <button class="btn btn-outline-danger" type="button"
+                    (click)="visibleModal = !visibleModal">Cancel</button>
+            </div>
+        </div>
+    </div>
     <div class="row m-3">
         <button class="btn btn-success col-md-2 col-12" type="button" (click)="showForm()">
             <span *ngIf="!visibleForm">Add profile</span>
@@ -21,7 +42,6 @@
             </div>
             <div class="d-grid mt-4 gap-2">
                 <button class="btn btn-outline-success" type="button" (click)="addProfile()">Add</button>
-                <button class="btn btn-outline-warning" type="reset">Reset</button>
             </div>
         </div>
     </div>
