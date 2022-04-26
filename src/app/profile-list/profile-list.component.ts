@@ -92,6 +92,12 @@ export class ProfileListComponent implements OnInit, OnChanges {
       }
     });
     this.visibleModal = false;
+    this.profile = {
+      id: 0,
+      name: '',
+      age: '',
+      urlImg: '',
+    };
   }
 
   generateID() {
